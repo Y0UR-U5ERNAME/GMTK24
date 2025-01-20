@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://frgu6b1i2pku"]
+
+[ext_resource type="Texture2D" uid="uid://dksv8jj4jqqsp" path="res://graphics/drop.png" id="1_hiaxb"]
+[ext_resource type="Script" path="res://scripts/drop.gd" id="1_stqju"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dbguf"]
+radius = 3.16228
+
+[node name="Drop" type="CharacterBody2D"]
+collision_layer = 128
+collision_mask = 21
+script = ExtResource("1_stqju")
+
+[node name="Drop" type="Sprite2D" parent="."]
+rotation = -1.5708
+texture = ExtResource("1_hiaxb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_dbguf")

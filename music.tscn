@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbmrsygq3tpdl"]
+
+[ext_resource type="AudioStream" uid="uid://bl03l26m7wer" path="res://the_bad_guy.wav" id="1_57mjt"]
+
+[node name="Music" type="AudioStreamPlayer"]
+process_mode = 3
+stream = ExtResource("1_57mjt")
+autoplay = true

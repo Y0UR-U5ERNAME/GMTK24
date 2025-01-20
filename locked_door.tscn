@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8ps41whf0g4n"]
+
+[ext_resource type="Script" path="res://scripts/locked_door.gd" id="1_2attj"]
+[ext_resource type="Texture2D" uid="uid://ct12his3g2ivx" path="res://graphics/locked_door.png" id="2_i2ux7"]
+[ext_resource type="Texture2D" uid="uid://ci546qj1d7ada" path="res://graphics/to_unlock.png" id="3_pcgav"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e731s"]
+size = Vector2(16, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n0frf"]
+size = Vector2(24, 64)
+
+[node name="LockedDoor" type="StaticBody2D"]
+script = ExtResource("1_2attj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.38419e-07, 2.38419e-07)
+texture = ExtResource("2_i2ux7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_e731s")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_n0frf")
+
+[node name="ToUnlock" type="Sprite2D" parent="."]
+z_index = 4
+position = Vector2(0, -48)
+texture = ExtResource("3_pcgav")

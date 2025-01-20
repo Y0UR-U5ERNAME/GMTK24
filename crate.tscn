@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bi0y6vmg454hw"]
+
+[ext_resource type="Script" path="res://scripts/crate.gd" id="1_ymbc3"]
+[ext_resource type="Texture2D" uid="uid://cjg58klpxwwy7" path="res://graphics/crate.png" id="2_o3pv0"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yrebo"]
+friction = 0.5
+rough = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2t168"]
+size = Vector2(32, 32)
+
+[node name="Crate" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 23
+mass = 0.25
+physics_material_override = SubResource("PhysicsMaterial_yrebo")
+script = ExtResource("1_ymbc3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4.76837e-07, -16)
+texture = ExtResource("2_o3pv0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_2t168")

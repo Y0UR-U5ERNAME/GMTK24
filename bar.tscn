@@ -1,0 +1,82 @@
+[gd_scene load_steps=15 format=3 uid="uid://cm3whk7dpxxqx"]
+
+[ext_resource type="Texture2D" uid="uid://b1xig4qi4c0ln" path="res://graphics/bartop2.png" id="2_0fkv3"]
+[ext_resource type="Texture2D" uid="uid://df8xbhwg3qyrx" path="res://graphics/barback2.png" id="2_almk8"]
+[ext_resource type="Texture2D" uid="uid://b5vnqp4jgr6ql" path="res://graphics/barfront.png" id="3_g162k"]
+[ext_resource type="Script" path="res://bar.gd" id="4_eynfs"]
+[ext_resource type="FontFile" uid="uid://c8bbaq65g6jdv" path="res://sans2.tres" id="4_yvi8j"]
+[ext_resource type="Texture2D" uid="uid://cuxwushkm6phh" path="res://graphics/barback.png" id="6_lq43r"]
+[ext_resource type="Texture2D" uid="uid://ci3fvfewtyn0f" path="res://graphics/bartop.png" id="7_pkkvl"]
+[ext_resource type="Texture2D" uid="uid://c3iucwmqh5kdm" path="res://graphics/barfront2.png" id="8_fb0sx"]
+[ext_resource type="Texture2D" uid="uid://ev7vsc7mb7og" path="res://graphics/bottle.png" id="9_dsbq2"]
+[ext_resource type="Texture2D" uid="uid://d4lpqvqw5cyud" path="res://graphics/itemframe.png" id="9_wwk5h"]
+[ext_resource type="Texture2D" uid="uid://cmmt8h8b4oxth" path="res://graphics/item0.png" id="10_7kind"]
+[ext_resource type="Texture2D" uid="uid://pgsf3a534c4" path="res://graphics/size.png" id="12_dkjgq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_htfkb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j5koy"]
+
+[node name="ProgressBar" type="TextureProgressBar"]
+anchors_preset = -1
+anchor_left = -0.05
+anchor_top = -0.034375
+anchor_right = -0.05
+anchor_bottom = -0.034375
+offset_left = 368.0
+offset_top = 19.0
+offset_right = 496.0
+offset_bottom = 35.0
+value = 50.0
+texture_under = ExtResource("2_almk8")
+texture_over = ExtResource("2_0fkv3")
+texture_progress = ExtResource("3_g162k")
+script = ExtResource("4_eynfs")
+metadata/_edit_use_anchors_ = true
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 128.0
+offset_bottom = 15.0
+theme_override_fonts/font = ExtResource("4_yvi8j")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/background = SubResource("StyleBoxEmpty_htfkb")
+theme_override_styles/fill = SubResource("StyleBoxEmpty_j5koy")
+value = 50.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_top = 32.0
+offset_right = 128.0
+offset_bottom = 48.0
+value = 50.0
+texture_under = ExtResource("6_lq43r")
+texture_over = ExtResource("7_pkkvl")
+texture_progress = ExtResource("8_fb0sx")
+
+[node name="ProgressBar" type="ProgressBar" parent="TextureProgressBar"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 128.0
+offset_bottom = 15.0
+theme_override_fonts/font = ExtResource("4_yvi8j")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/background = SubResource("StyleBoxEmpty_htfkb")
+theme_override_styles/fill = SubResource("StyleBoxEmpty_j5koy")
+value = 50.0
+
+[node name="Sprite2D" type="Sprite2D" parent="TextureProgressBar"]
+position = Vector2(-8, 8)
+texture = ExtResource("9_dsbq2")
+
+[node name="ItemFrame" type="Sprite2D" parent="."]
+position = Vector2(-40, 8)
+texture = ExtResource("9_wwk5h")
+
+[node name="Sprite2D" type="Sprite2D" parent="ItemFrame"]
+texture = ExtResource("10_7kind")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-8, 8)
+texture = ExtResource("12_dkjgq")

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0y34kfairgn2"]
+
+[ext_resource type="AudioStream" uid="uid://mi365011wjdk" path="res://swap.wav" id="1_phup1"]
+
+[node name="CollectSound" type="AudioStreamPlayer"]
+stream = ExtResource("1_phup1")
+autoplay = true

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://fr7esbvtjfop"]
+
+[ext_resource type="Script" path="res://scripts/exit_prev.gd" id="1_uxfx3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3vnyv"]
+size = Vector2(64, 64)
+
+[node name="ExitPrev" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_uxfx3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3vnyv")

@@ -1,0 +1,65 @@
+[gd_scene load_steps=11 format=3 uid="uid://biwjwemqr3qpn"]
+
+[ext_resource type="Texture2D" uid="uid://buaghnpce76y8" path="res://graphics/deatheffect.png" id="1_cmfcl"]
+[ext_resource type="Script" path="res://scripts/death_effect.gd" id="2_28qhg"]
+[ext_resource type="AudioStream" uid="uid://dpnewh61kbtn3" path="res://die.wav" id="3_msyl4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3h4i"]
+atlas = ExtResource("1_cmfcl")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sd4km"]
+atlas = ExtResource("1_cmfcl")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbboa"]
+atlas = ExtResource("1_cmfcl")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2eiy3"]
+atlas = ExtResource("1_cmfcl")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_isrv3"]
+atlas = ExtResource("1_cmfcl")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hu1sx"]
+atlas = ExtResource("1_cmfcl")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fdbb2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3h4i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sd4km")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbboa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2eiy3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_isrv3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hu1sx")
+}],
+"loop": false,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="DeathEffect" type="AnimatedSprite2D"]
+process_mode = 3
+z_index = 5
+sprite_frames = SubResource("SpriteFrames_fdbb2")
+script = ExtResource("2_28qhg")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_msyl4")
+autoplay = true

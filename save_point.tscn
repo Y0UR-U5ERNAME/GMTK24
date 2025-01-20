@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://bia8nhbwiooep"]
+
+[ext_resource type="Script" path="res://scripts/save_point.gd" id="1_d7wp1"]
+[ext_resource type="Texture2D" uid="uid://dj80o158orcad" path="res://graphics/water.png" id="2_ff8ig"]
+[ext_resource type="Texture2D" uid="uid://dksv8jj4jqqsp" path="res://graphics/drop.png" id="3_wiwso"]
+[ext_resource type="Texture2D" uid="uid://bdpkntu6aeaxq" path="res://graphics/to_save.png" id="4_0g8x4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o7pnu"]
+size = Vector2(64, 16)
+
+[node name="SavePoint" type="Area2D"]
+z_index = 1
+collision_layer = 65
+collision_mask = 2
+script = ExtResource("1_d7wp1")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_left = -32.0
+offset_top = -14.0
+offset_right = 32.0
+offset_bottom = 2.0
+texture = ExtResource("2_ff8ig")
+region_rect = Rect2(0, 0, 24, 24)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_o7pnu")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+z_index = -1
+position = Vector2(0, -168)
+amount = 5
+lifetime = 1.8
+preprocess = 5.0
+texture = ExtResource("3_wiwso")
+emission_shape = 3
+emission_rect_extents = Vector2(30, 0)
+gravity = Vector2(0, 98)
+scale_amount_min = 0.4
+scale_amount_max = 0.5
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 4
+position = Vector2(0, -32)
+texture = ExtResource("4_0g8x4")

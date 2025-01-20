@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dm0qn0crr8v62"]
+
+[ext_resource type="Script" path="res://scripts/bottle_collectible.gd" id="1_gwpxr"]
+[ext_resource type="Texture2D" uid="uid://c6b10ekt3harn" path="res://icon.svg" id="2_hvuds"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qm1vg"]
+radius = 8.0
+
+[node name="BottleCollectible" type="Area2D"]
+script = ExtResource("1_gwpxr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 0.785398
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("2_hvuds")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qm1vg")
